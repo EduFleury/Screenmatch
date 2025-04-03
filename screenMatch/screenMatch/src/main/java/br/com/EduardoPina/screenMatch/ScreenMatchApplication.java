@@ -1,5 +1,6 @@
 package br.com.EduardoPina.screenMatch;
 
+import br.com.EduardoPina.screenMatch.model.DadosEpisodios;
 import br.com.EduardoPina.screenMatch.model.DadosService;
 import br.com.EduardoPina.screenMatch.service.ConsumoAPI;
 import br.com.EduardoPina.screenMatch.service.ConverteDados;
@@ -25,6 +26,11 @@ public class ScreenMatchApplication implements CommandLineRunner {
 		DadosService dadosService = converteDados.ObterDados(json, DadosService.class);
 
 		System.out.println(dadosService);
+
+		json = consumoAPI.obterDados("https://www.omdbapi.com/?t=gilmore+girls&Season=1&Episode=2&apikey=f459e5c5");
+
+		DadosEpisodios dadosEpisodios = converteDados.ObterDados(json, DadosEpisodios.class);
+		System.out.println(dadosEpisodios);
 
 	}
 }
