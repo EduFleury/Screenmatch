@@ -1,6 +1,7 @@
 package br.com.EduardoPina.screenMatch.principal;
 
 import br.com.EduardoPina.screenMatch.model.*;
+import br.com.EduardoPina.screenMatch.repository.SerieRepository;
 import br.com.EduardoPina.screenMatch.service.ConsumoAPI;
 import br.com.EduardoPina.screenMatch.service.ConverteDados;
 
@@ -17,6 +18,11 @@ public class Principal {
     ConsumoAPI consumoAPI = new ConsumoAPI();
     ConverteDados converteDados = new ConverteDados();
     private List<DadosSerie> dadosSeries = new ArrayList<>();
+    private SerieRepository repository;
+
+    public Principal(SerieRepository repository) {
+        this.repository = repository;
+    }
 
     public void exibirMenu() {
         var opcao = -1;
@@ -55,7 +61,9 @@ public class Principal {
 
     private void buscarSerieWeb() {
         DadosSerie dados = getDadosSerie();
-        dadosSeries.add(dados);
+        Serie serie = new Serie(dados);
+        repository.save(serie);
+//        dadosSeries.add(dados);
         System.out.println(dados);
     }
 
@@ -81,10 +89,8 @@ public class Principal {
     }
 
     private void ListarSerieBuscada() {
-        List<Serie> series = new ArrayList<>();
-
-        series = dadosSeries.stream().map(d -> new Serie(d)).collect(Collectors.toList());
-
+        List<Serie> series = repository.findAll();
+//        dadosSeries.stream().map(d -> new Serie(d)).collect(Collectors.toList());
         series.stream().sorted(Comparator.comparing(Serie::getGenero)).forEach(System.out::println);
     }
 
