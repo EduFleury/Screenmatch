@@ -1,16 +1,24 @@
 package br.com.EduardoPina.screenMatch.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
+@Entity
+@Table(name = "episodios")
 public class Episodio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Integer temporada;
     private String titulo;
     private Integer numeroEpisodio;
     private Double avaliacao;
     private LocalDate datalancamento;
+    @ManyToOne
+    private Serie serie;
 
     @Override
     public String toString() {
@@ -22,6 +30,8 @@ public class Episodio {
                 ", datalancamento= " + datalancamento +
                 '}';
     }
+
+    public Episodio(){}
 
     public Episodio(Integer numero, DadosEpisodios d) {
         this.temporada = numero;
@@ -40,6 +50,21 @@ public class Episodio {
         }
     }
 
+    public Integer getNumeroEpisodio() {
+        return numeroEpisodio;
+    }
+
+    public void setNumeroEpisodio(Integer numeroEpisodio) {
+        this.numeroEpisodio = numeroEpisodio;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
 
     public Integer getTemporada() {
         return temporada;
@@ -79,5 +104,13 @@ public class Episodio {
 
     public void setDatalancamento(LocalDate datalancamento) {
         this.datalancamento = datalancamento;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

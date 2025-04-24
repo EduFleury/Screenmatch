@@ -19,6 +19,7 @@ public class Principal {
     ConverteDados converteDados = new ConverteDados();
     private List<DadosSerie> dadosSeries = new ArrayList<>();
     private SerieRepository repository;
+    List<Serie> series = new ArrayList<>();
 
     public Principal(SerieRepository repository) {
         this.repository = repository;
@@ -75,21 +76,37 @@ public class Principal {
         return dados;
     }
 
-
     private void buscarEpisodioPorSerie(){
-       DadosSerie dadosSerie = getDadosSerie();
-       List<DadosTemporada> temporada = new ArrayList<>();
+        ListarSerieBuscada();
+        System.out.println("Escolha uma serie pelo nome: ");
+       var nomeSerie = leitura.nextLine();
 
-        for(int i =0; i<dadosSerie.totaltemporadas(); i++){
-            var json = consumoAPI.obterDados(ENDERECO+dadosSerie.titulo().replace(" ", "+")+API_KEY);
-            DadosTemporada dadosTemporada = converteDados.ObterDados(json, DadosTemporada.class);
-            temporada.add(dadosTemporada);
-        }
-        temporada.forEach(System.out::println);
+       Optional<Serie> serie = series.stream().filter(s -> s.getTitulo().toLowerCase().contains(nomeSerie.toLowerCase()))
+               .findFirst();
+
+       if(serie.isPresent()){
+            var serieEncontrada = serie.get();
+           List<DadosTemporada> temporada = new ArrayList<>();
+
+           for(int i =1; i<=serieEncontrada.getTotaltemporadas(); i++){
+               var json = consumoAPI.obterDados(ENDERECO+serieEncontrada.getTitulo().replace(" ", "+")+"&season="+i+API_KEY);
+               DadosTemporada dadosTemporada = converteDados.ObterDados(json, DadosTemporada.class);
+               temporada.add(dadosTemporada);
+           }
+           temporada.forEach(System.out::println);
+           List<Episodio> episodios = temporada.stream()
+                   .flatMap(d -> d.episodios().stream()
+                           .map(e -> new Episodio(d.numero(), e)))
+                           .collect(Collectors.toList());
+           serieEncontrada.setEpisodios(episodios);
+           repository.save(serieEncontrada);
+       }else{
+           System.out.println("Serie não encontrada!");
+       }
     }
 
     private void ListarSerieBuscada() {
-        List<Serie> series = repository.findAll();
+          series = repository.findAll();
 //        dadosSeries.stream().map(d -> new Serie(d)).collect(Collectors.toList());
         series.stream().sorted(Comparator.comparing(Serie::getGenero)).forEach(System.out::println);
     }
