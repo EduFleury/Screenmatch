@@ -1,27 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebecc7ee-4c29-442c-ad24-3e010c539969" name="Changes" comment="" />
+    <list default="true" id="ebecc7ee-4c29-442c-ad24-3e010c539969" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_18_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_18_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_18_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_10_1_39.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_10_1_39.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_10_1_39.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_3_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_3_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_3_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_web_6_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_webmvc_6_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/ScreenMatchApplicationSemWeb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/config/CorsConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/controller/SerieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/dto/SerieDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/service/SerieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenMatch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/screenMatch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/ScreenMatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/ScreenMatchApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/model/Episodio.java" beforeDir="false" afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/model/Episodio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/repository/SerieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/screenMatch/src/main/java/br/com/EduardoPina/screenMatch/repository/SerieRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2v8ktfAaGaubgi5PAEiXc8XhEwV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/eduar/Desktop/AluraSpring"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/eduar/Desktop/AluraSpring&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

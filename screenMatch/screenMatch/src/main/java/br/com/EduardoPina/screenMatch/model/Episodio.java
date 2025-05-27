@@ -50,14 +50,6 @@ public class Episodio {
         }
     }
 
-    public Integer getNumeroEpisodio() {
-        return numeroEpisodio;
-    }
-
-    public void setNumeroEpisodio(Integer numeroEpisodio) {
-        this.numeroEpisodio = numeroEpisodio;
-    }
-
     public Serie getSerie() {
         return serie;
     }
