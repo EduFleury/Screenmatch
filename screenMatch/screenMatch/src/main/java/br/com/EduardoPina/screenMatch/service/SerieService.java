@@ -2,6 +2,7 @@ package br.com.EduardoPina.screenMatch.service;
 
 import br.com.EduardoPina.screenMatch.dto.EpisodioDTO;
 import br.com.EduardoPina.screenMatch.dto.SerieDTO;
+import br.com.EduardoPina.screenMatch.model.Categoria;
 import br.com.EduardoPina.screenMatch.model.Episodio;
 import br.com.EduardoPina.screenMatch.model.Serie;
 import br.com.EduardoPina.screenMatch.repository.SerieRepository;
@@ -83,5 +84,10 @@ public class SerieService {
         return serieRepository.obterEpisodioPorTemporada(id, numero).stream()
                 .map(e -> new EpisodioDTO(e.getTemporada(), e.getnumeroEpisodio(), e.getTitulo()))
                 .collect(Collectors.toList());
+    }
+
+    public List<SerieDTO> obterSeriesPorCategoria(String nomeGenero) {
+        Categoria categoria = Categoria.fromPortugues(nomeGenero);
+        return converteDados(serieRepository.findByGenero(categoria));
     }
 }
